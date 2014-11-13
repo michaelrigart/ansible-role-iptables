@@ -1,0 +1,25 @@
+---
+galaxy_info:
+  author: Michaël Rigart
+  description: An ansible role for installing and configuring iptables. This role uses ufw on Debian based machines and uses a iptables script for RedHat based machines.
+  company: Netronix.be
+  license: GPLv3
+  min_ansible_version: 1.8
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+  categories:
+    - system
+    - networking
+dependencies: []
+

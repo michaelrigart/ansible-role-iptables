@@ -1,0 +1,16 @@
+---
+
+- name: template iptables
+  template:
+    src: iptables.j2
+    dest: /etc/sysconfig/iptables
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart iptables
+
+- name: ensure iptables is running
+  service:
+    name: iptables
+    state: started
+    enabled: yes
