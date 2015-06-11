@@ -8,8 +8,7 @@ Role Variables
 --------------
 
 ```yaml
-firewall_allowed_services: Only supported on Ubuntu. List service names (ie, OpenSSH)
-firewall_allowed_ports: Define a list of hashes that specify port and proto.
+firewall_allowed_ports: Define a list of cits that specify all different rules. Every item in the dict stands for a parameter of the ufw module. Default rule value is allow
 ```
 
 **Don't forget to allow port 22 for SSH, or your first run will lock you out of your servers!**

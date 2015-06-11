@@ -7,18 +7,24 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: allow services before enabling firewall
+- name: set rules before enabling firewall
   ufw:
-    rule: allow
-    name: '{{ item }}'
-  with_items: firewall_allowed_services
-  when: firewall_allowed_services is defined
-
-- name: allow ports before enabling firewall
-  ufw:
-    rule: allow
+    rule: '{{ item.rule|default("allow") }}'
     port: '{{ item.port }}'
     proto: '{{ item.proto }}'
+    delete: '{{ item.delete|default(omit) }}'
+    direction: '{{ item.direction|default(omit) }}'
+    from_ip: '{{ item.from_ip|default(omit) }}'
+    from_port: '{{ item.from_port|default(omit) }}'
+    insert: '{{ item.insert|default(omit) }}'
+    log: '{{ item.log|default(omit) }}'
+    logging: '{{ item.logging|default(omit) }}'
+    name: '{{ item.name|default(omit) }}'
+    policy: '{{ item.policy|default(omit) }}'
+    route: '{{ item.route|default(omit) }}'
+    state: '{{ item.state|default(omit) }}'
+    to_ip: '{{ item.to_ip|default(omit) }}'
+    to_port: '{{ item.to_port|default(omit) }}'
   with_items: firewall_allowed_ports
   when: firewall_allowed_ports is defined
 
