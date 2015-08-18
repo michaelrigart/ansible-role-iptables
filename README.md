@@ -1,6 +1,6 @@
 Ansible iptables Role
 =====================
-[![Build Status](https://semaphoreci.com/api/v1/projects/1e3346f0-e00a-42a5-b9c9-8b1faafd271c/459459/badge.svg)](https://semaphoreci.com/michaelrigart/ansible-role-iptables) [![Build Status](https://travis-ci.org/michaelrigart/ansible-role-iptables.svg?branch=master)](https://travis-ci.org/michaelrigart/ansible-role-iptables)
+[![Build Status](https://semaphoreci.com/api/v1/projects/1e3346f0-e00a-42a5-b9c9-8b1faafd271c/459459/badge.svg)](https://semaphoreci.com/michaelrigart/ansible-role-iptables)
 
 An ansible role for installing and configuring iptables.
 
