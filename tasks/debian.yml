@@ -25,7 +25,7 @@
     state: '{{ item.state|default(omit) }}'
     to_ip: '{{ item.to_ip|default(omit) }}'
     to_port: '{{ item.to_port|default(omit) }}'
-  with_items: firewall_allowed_ports
+  with_items: '{{ firewall_allowed_ports }}'
   when: firewall_allowed_ports is defined
 
 - name: enable ufw and block everything else
